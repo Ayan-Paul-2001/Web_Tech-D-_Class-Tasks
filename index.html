@@ -2,21 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Flexbox Layout</title>
+    <style>
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
+        .column-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <div style="display: flex;height:700px; width:700px ;justify-content: center; align-items: center ;flex-direction: column; ">
-           <div style="height: 100px;width: 100px; border-radius: 100px;background-color: red; "></div>
-           <h2> Title</h2>
-           <div style="background-color: blueviolet;height: 400px; width:400px;">
-            <div style="height:400px;width:200px;background-color: bisque;">
-                   <div style="height: 250px;width:200px; background-color: cadetblue;"></div>
-             </div>
-          
-
-           </div>
-    </div>
-  
+    <center>  
+        <svg height="300" width="300"> 
+           <circle cx="150" cy="190" r="100" stroke="green" 
+              stroke-width="1" fill="favicon.png" /> 
+        </svg> 
+     <h2> Tittle</h2>
+    </center> 
+    <div class="flex-container">
+        <div class="column-container"> 
+            <div style="background-color: rgb(130, 160, 70);height: 450px;width: 200px;">
+                <form><h3><u>User Registration</u></h3><br>
+                    <label for="fname">Full Name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                    <label for="email">Email Address:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                    <label for="cpassword">Confirm Password:</label><br>
+                    <input type="password" id="cpassword" name="cpassword"><br>
+                    <label for="dob">Date of Birth</label><br>
+                    <input type="date" id="dob" name="dob"><br>
+                    <label for="ucity">User City</label>
+                    <select name="ucity" id="ucity">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="China">China</option>
+                        <option value="Nepal">Nepal</option>
+                    </select><br>
+                    <label for="color">Choose Color:</label>
+                    <input type="color" id="color" name="color"><br>
+                    <label type="gender">Gender:</label><br>
+                    <input type="radio" id="male" name="male" value="Male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="female" value="Female">
+                    <label for="female">Female</label><br>
+                    <input type="checkbox" id="terms" name="terms&cond" value="Terms & Condtions">
+                    <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br>  
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
+        </div>
+        <div style="background-color: rgb(161, 33, 212);height: 600px;width: 200px;"></div>
+        </div>
 </body>
 </html>
