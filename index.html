@@ -49,18 +49,92 @@
                     <label for="color">Choose Color:</label>
                     <input type="color" id="color" name="color"><br>
                     <label type="gender">Gender:</label><br>
-                    <input type="radio" id="male" name="male" value="Male">
+                    <input type="radio" id="male" name="gender" value="Male">
                     <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="female" value="Female">
+                    <input type="radio" id="female" name="gender" value="Female">
                     <label for="female">Female</label><br>
                     <input type="checkbox" id="terms" name="terms&cond" value="Terms & Condtions">
                     <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br>  
                     <input type="submit" value="Submit">
                 </form>
             </div>
+            <script>
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent form submission
+
+                    // Full Name Validation
+                    const fullName = document.getElementById('fname').value;
+                    const nameRegex = /^[A-Za-z\s]+$/;
+                    if (!nameRegex.test(fullName)) {
+                        alert('Full Name must only contain alphabets and spaces.');
+                        return;
+                    }
+
+                    // Email Validation
+                    const email = document.getElementById('email').value;
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+
+                    // Password Validation
+                    const password = document.getElementById('password').value;
+                    const confirmPassword = document.getElementById('cpassword').value;
+                    const passwordRegex = /^[A-Za-z0-9]{8,}$/;
+                    if (!passwordRegex.test(password)) {
+                        alert('Password must be at least 8 characters long and contain only alphabets and numbers.');
+                        return;
+                    }
+                    if (password !== confirmPassword) {
+                        alert('Password and Confirm Password must match.');
+                        return;
+                    }
+
+                    // Date of Birth Validation
+                    const dob = new Date(document.getElementById('dob').value);
+                    const today = new Date();
+                    const age = today.getFullYear() - dob.getFullYear();
+                    const monthDiff = today.getMonth() - dob.getMonth();
+                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                        age--;
+                    }
+                    if (age < 18) {
+                        alert('You must be at least 18 years old.');
+                        return;
+                    }
+
+                    // Country Validation
+                    const country = document.getElementById('ucity').value;
+                    if (country !== 'Bangladesh') {
+                        alert('You must select Bangladesh as your country.');
+                        return;
+                    }
+
+                    // Gender Validation
+                    const gender = document.querySelector('input[name="gender"]:checked');
+                    if (!gender) {
+                        alert('You must select a gender.');
+                        return;
+                    }
+
+                    // Terms and Conditions Validation
+                    const termsChecked = document.getElementById('terms').checked;
+                    if (!termsChecked) {
+                        alert('You must agree to the terms and conditions.');
+                        return;
+                    }
+
+                    alert('Congratuation, You are Good to GO..!!');
+                });
+            </script>
             <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
+           
         </div>
         <div style="background-color: rgb(161, 33, 212);height: 600px;width: 200px;"></div>
         </div>
+    <script>
+        
+    </script>
 </body>
 </html>
