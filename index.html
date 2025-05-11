@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Flexbox Layout</title>
+    <title>Webtech Project Layout</title>
     <style>
         .flex-container{
             display: flex;
@@ -19,119 +19,154 @@
 <body>
     <center>  
         <svg height="300" width="300"> 
-           <circle cx="150" cy="190" r="100" stroke="green" 
-              stroke-width="1" fill="favicon.png" /> 
-        </svg> 
-     <h2> Tittle</h2>
+        <image href="American_International_University-Bangladesh_Monogram.svg.png" x="50" y="50" height="200" width="200" />
+        </svg>
+        <h3 style="position: relative; top: -50px; font-weight: bold;">AIUB Student Registration</h3>
     </center> 
     <div class="flex-container">
-        <div class="column-container"> 
-            <div style="background-color: rgb(130, 160, 70);height: 450px;width: 200px;">
-                <form><h3><u>User Registration</u></h3><br>
-                    <label for="fname">Full Name:</label><br>
-                    <input type="text" id="fname" name="fname"><br>
-                    <label for="email">Email Address:</label><br>
-                    <input type="text" id="email" name="email"><br>
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" name="password"><br>
-                    <label for="cpassword">Confirm Password:</label><br>
-                    <input type="password" id="cpassword" name="cpassword"><br>
-                    <label for="dob">Date of Birth</label><br>
-                    <input type="date" id="dob" name="dob"><br>
-                    <label for="ucity">User City</label>
-                    <select name="ucity" id="ucity">
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="India">India</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="China">China</option>
-                        <option value="Nepal">Nepal</option>
-                    </select><br>
-                    <label for="color">Choose Color:</label>
-                    <input type="color" id="color" name="color"><br>
-                    <label type="gender">Gender:</label><br>
-                    <input type="radio" id="male" name="gender" value="Male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="Female">
-                    <label for="female">Female</label><br>
-                    <input type="checkbox" id="terms" name="terms&cond" value="Terms & Condtions">
-                    <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br>  
-                    <input type="submit" value="Submit">
-                </form>
+        <div class="column-container" style="margin-top: -50px;"> 
+            <div style="background-color: rgb(160, 104, 70);height: 470px;width: 300px;">
+            <form action="external.php" method="POST" style="margin-top: -15px;"><h3 style="text-align: center;"><u>User Registration</u></h3><br>
+                <label for="fname" style="margin-left: 10px; " >Full Name:</label><br>
+                <input type="text" id="fname" name="fname" value="ayan" style="margin-left: 10px; border-radius:5px;"><br>
+                <label for="username" style="margin-left: 10px;">Username:</label><br>
+                <input type="text" id="username" name="username" style="margin-left: 10px; border-radius:5px;"><br>
+                <label for="email" style="margin-left: 10px;">Email Address:</label><br>
+                <input type="text" id="email" name="email" value="abcd@gmail.com" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
+                <label for="password" style="margin-left: 10px;">Password:</label><br>
+                <input type="password" id="password" name="password" value="22558800" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
+                <label for="cpassword" style="margin-left: 10px;">Confirm Password:</label><br>
+                <input type="password" id="cpassword" name="cpassword" value="22558800" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
+                <label for="dob" style="margin-left: 10px; shape-margin:1px; border-radius:5px;">Date of Birth</label><br>
+                <input type="date" id="dob" name="dob" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
+                <label for="ucity" style="margin-left: 10px;">User City</label>
+                <select name="ucity" id="ucity">
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="China">China</option>
+                <option value="Nepal">Nepal</option>
+                </select><br>
+                <label for="color" style="margin-left: 10px; ">Choose Color:</label>
+                <input type="color" id="color" name="color" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
+                <label type="gender" style="margin-left: 10px;">Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="Male" style="margin-left: 10px;">
+                <label for="male" >Male</label><br>
+                <input type="radio" id="female" name="gender" value="Female" style="margin-left: 10px;">
+                <label for="female" >Female</label><br>
+                <input type="checkbox" id="terms" name="terms&cond" value="Terms & Condtions" style="margin-left: 10px;">
+                <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br> <br>
+                <input type="submit" name="submit" value="Submit" style="margin-left: 10px; ">
+            </form>
             </div>
             <script>
-                document.querySelector('form').addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent form submission
+            document.querySelector('form').addEventListener('submit', function(event) {
+                //event.preventDefault(); // Prevent form submission
 
-                    // Full Name Validation
-                    const fullName = document.getElementById('fname').value;
-                    const nameRegex = /^[A-Za-z\s]+$/;
-                    if (!nameRegex.test(fullName)) {
-                        alert('Full Name must only contain alphabets and spaces.');
-                        return;
-                    }
+                // Full Name Validation
+                const fullName = document.getElementById('fname').value;
+                const nameRegex = /^[A-Za-z\s]+$/;
+                if (!nameRegex.test(fullName)) {
+                alert('Full Name must only contain alphabets and spaces.');
+                event.preventDefault();
+                return;
+                }
+                // Username Validation
+                const username = document.getElementById('username').value;
+                const usernameRegex = /^[A-Za-z0-9]+$/;
+                if (!usernameRegex.test(username)) {
+                alert('Username must be alphanumeric and cannot contain spaces.');
+                event.preventDefault();
+                return;
+                }
 
-                    // Email Validation
-                    const email = document.getElementById('email').value;
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        alert('Please enter a valid email address.');
-                        return;
-                    }
+                // Email Validation
+                const email = document.getElementById('email').value;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return;
+                }
 
-                    // Password Validation
-                    const password = document.getElementById('password').value;
-                    const confirmPassword = document.getElementById('cpassword').value;
-                    const passwordRegex = /^[A-Za-z0-9]{8,}$/;
-                    if (!passwordRegex.test(password)) {
-                        alert('Password must be at least 8 characters long and contain only alphabets and numbers.');
-                        return;
-                    }
-                    if (password !== confirmPassword) {
-                        alert('Password and Confirm Password must match.');
-                        return;
-                    }
+                // Password Validation
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('cpassword').value;
+                const passwordRegex = /^[A-Za-z0-9]{8,}$/;
+                if (!passwordRegex.test(password)) {
+                alert('Password must be at least 8 characters long and contain only alphabets and numbers.');
+                event.preventDefault();
+                return;
+                }
+                if (password !== confirmPassword) {
+                alert('Password and Confirm Password must match.');
+                event.preventDefault();
+                return;
+                }
 
-                    // Date of Birth Validation
-                    const dob = new Date(document.getElementById('dob').value);
-                    const today = new Date();
-                    const age = today.getFullYear() - dob.getFullYear();
-                    const monthDiff = today.getMonth() - dob.getMonth();
-                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
-                        age--;
-                    }
-                    if (age < 18) {
-                        alert('You must be at least 18 years old.');
-                        return;
-                    }
+                // Date of Birth Validation
+                const dobInput = document.getElementById('dob').value;
+                if (!dobInput) {
+                    alert('You must select a date of birth.');
+                    event.preventDefault();
+                    return;
+                }
+                const dob = new Date(dobInput);
+                const today = new Date();
+                const age = today.getFullYear() - dob.getFullYear();
+                const monthDiff = today.getMonth() - dob.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+                }
+                if (age < 18) {
+                alert('You must be at least 18 years old.');
+                event.preventDefault();
+                return;
+                }
 
-                    // Country Validation
-                    const country = document.getElementById('ucity').value;
-                    if (country !== 'Bangladesh') {
-                        alert('You must select Bangladesh as your country.');
-                        return;
-                    }
+                // Country Validation
+                const country = document.getElementById('ucity').value;
+                if (!country) {
+                alert('You must select a country.');
+                event.preventDefault();
+                return;
+                }
+             
 
-                    // Gender Validation
-                    const gender = document.querySelector('input[name="gender"]:checked');
-                    if (!gender) {
-                        alert('You must select a gender.');
-                        return;
-                    }
+                // Gender Validation
+                const gender = document.querySelector('input[name="gender"]:checked');
+                if (!gender) {
+                alert('You must select a gender.');
+                event.preventDefault();
+                return;
+                }
 
-                    // Terms and Conditions Validation
-                    const termsChecked = document.getElementById('terms').checked;
-                    if (!termsChecked) {
-                        alert('You must agree to the terms and conditions.');
-                        return;
-                    }
+                // Terms and Conditions Validation
+                const termsChecked = document.getElementById('terms').checked;
+                if (!termsChecked) {
+                alert('You must agree to the terms and conditions.');
+                event.preventDefault();
+                return;
+                }
 
-                    alert('Congratuation, You are Good to GO..!!');
-                });
+                alert('Congratuation, You are Good to GO..!!');
+            });
             </script>
-            <div style="background-color:rgb(26, 121, 184);height: 150px;width: 200px;"></div> 
+            <div style="background-color:rgb(26, 121, 184);height: 200px;width: 300px; overflow: hidden;">
+                <div style="text-align: center; color: white; padding-top: 0;">
+                    <h3 style="margin-top: 5px;">Sign In</h3>
+                    <form style="margin-top: 7px;">
+                        <label for="signin-username" style="color: rgb(10, 10, 10); font-size: 18px;">Username:</label><br>
+                        <input type="text" id="signin-username" name="signin-username" style="border-radius: 5px; width: 90%;"><br><br>
+                        <label for="signin-password" style="color: rgb(0, 0, 0); font-size: 18px;">Password:</label><br>
+                        <input type="password" id="signin-password" name="signin-password" style="border-radius: 5px; width: 90%;"><br><br>
+                        <input type="submit" value="Login" style="border-radius: 5px; background-color: white; color: black; padding: 5px 20px; font-size: 14px; display: inline-block;">
+                    </form>
+                </div>
+            </div> 
            
         </div>
-        <div style="background-color: rgb(161, 33, 212);height: 600px;width: 200px;"></div>
+        <div style="background-color: rgb(33, 200, 212);height: 650;width: 350px; margin-top: -50px;"></div>
         </div>
     <script>
         
