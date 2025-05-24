@@ -19,7 +19,33 @@ if ($conn->connect_error) {
             return true;
         }
     </script>
+    <style>
+        .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .top-right-buttons button {
+            background: #2a5298;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .top-right-buttons button:hover {
+            background: #1e3c72;
+        }
+    </style>
 </head>
+<div class="top-right-buttons">
+    <button type="button" onclick="window.location.href='user.php'">User</button>
+    <button type="button" onclick="window.location.href='logout.php'">Logout</button>
+</div>
 <body style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; margin: 0;">
     <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
         <div style="background: #fff; padding: 40px 30px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">

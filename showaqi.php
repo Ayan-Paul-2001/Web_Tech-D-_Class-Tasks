@@ -1,4 +1,8 @@
 <?php
+echo '<div style="position: absolute; top: 16px; right: 16px;">
+    <button onclick="window.location.href=\'user.php\'" style="margin-right:8px;">User</button>
+    <button onclick="window.location.href=\'logout.php\'">Logout</button>
+      </div>';
 $conn = new mysqli("localhost", "root", "", "webtech_labd");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
