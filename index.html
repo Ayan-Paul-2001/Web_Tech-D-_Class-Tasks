@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,16 +161,19 @@
             <div style="background-color:rgb(26, 121, 184);height: 200px;width: 300px; overflow: hidden;">
                 <div style="text-align: center; color: white; padding-top: 0;">
                     <h3 style="margin-top: 5px;">Sign In</h3>
-                    <form style="margin-top: 7px;">
-                        <label for="signin-username" style="color: rgb(10, 10, 10); font-size: 18px;">Username:</label><br>
-                        <input type="text" id="signin-username" name="signin-username" style="border-radius: 5px; width: 90%;"><br><br>
+                    <form id="signin-form" style="margin-top: 7px;" method="POST" action="requestaqi.php"></form>
+                        <label for="signin-email" style="color: rgb(10, 10, 10); font-size: 18px;">Email:</label><br>
+                        <input type="text" id="signin-email" name="signin-email" style="border-radius: 5px; width: 90%;"><br><br>
                         <label for="signin-password" style="color: rgb(0, 0, 0); font-size: 18px;">Password:</label><br>
                         <input type="password" id="signin-password" name="signin-password" style="border-radius: 5px; width: 90%;"><br><br>
-                        <input type="submit" value="Login" style="border-radius: 5px; background-color: white; color: black; padding: 5px 20px; font-size: 14px; display: inline-block;">
+                        <input type="submit" value="Login" name="login"style="border-radius: 5px; background-color: white; color: black; padding: 5px 20px; font-size: 14px; display: inline-block;">
                     </form>
+
+                    
                 </div>
             </div> 
-           
+
+
         </div>
         <div style="background-color: rgb(33, 200, 212); height: 650px; width: 400px; margin-top: -50px; padding: 20px;">
             <table style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 30px;"> <caption style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Air Quality Index (AQI)</caption>

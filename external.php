@@ -12,7 +12,10 @@
 <?php
 session_start();
 
-
+if (isset($_POST['color'])) {
+    // Set cookie for 7 days
+    setcookie('bgcolor', $_POST['color'], time() + (120), "/");
+}
 // echo "Hi ".$_POST['uname']; // ASSOCIATIVE ARRAY K-V  - SUPERGLOBAL ARRAY
 // echo "<br>".$_POST['email'];
 // echo "<br>".$_GET['uname'];
@@ -23,8 +26,42 @@ if (isset($_POST['cancel'])) {
     header("Location: index.html");
     exit();
 }
+if (isset($_POST['submit'])) {
+    $_SESSION['user_receipt'] = [
+        'fname' => $_POST['fname'],
+        'username' => $_POST['username'],
+        'password' => $_POST['password'],
+        'email' => $_POST['email'],
+        'dob' => $_POST['dob'],
+        'ucity' => $_POST['ucity'],
+        'gender' => $_POST['gender']
+    ];
+}
 
+if (isset($_POST['confirm'])) {
+    $fname = $_POST['fname'];
+     $uname= $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $dob = $_POST['dob'];
+    $ucity = $_POST['ucity'];
+    $gender = $_POST['gender'];
+ 
+    // Connection String
+   $con = mysqli_connect("localhost", "root", "", "webtech_labd"); 
 
+   // Use correct column name and prepared statements for security
+   $sql = "INSERT INTO user (full_name, user_name, email, password, date_of_birth, city, gender) VALUES ('$fname', '$uname', '$email', '$password', '$dob', '$ucity', '$gender')";
+   $stmt = mysqli_prepare($con, $sql);
+   mysqli_stmt_bind_param($stmt, "sssssss", $fname, $uname, $email, $password, $dob, $ucity, $gender);
+
+   if (mysqli_stmt_execute($stmt)) {
+     echo "Inserted....";
+   } else {
+     echo "Error: " . mysqli_error($con);
+   }
+   mysqli_stmt_close($stmt);
+}
 
 ?>
     <form method='post' style='margin-top: 40px;'>
@@ -70,30 +107,4 @@ echo "</ul>";
 else
     print_r("NO DATA");
 
-?>
-<?php
-if (isset($_POST['confirm'])) {
-    $fname = $_POST['fname'];
-     $uname= $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $dob = $_POST['dob'];
-    $ucity = $_POST['ucity'];
-    $gender = $_POST['gender'];
- 
-    // Connection String
-   $con = mysqli_connect("localhost", "root", "", "webtech_labd"); 
-
-   // Use correct column name and prepared statements for security
-   $sql = "INSERT INTO user (full_name, user_name, email, password, date_of_birth, city, gender) VALUES ('$fname', '$uname', '$email', '$password', '$dob', '$ucity', '$gender')";
-   $stmt = mysqli_prepare($con, $sql);
-   mysqli_stmt_bind_param($stmt, "sssssss", $fname, $uname, $email, $password, $dob, $ucity, $gender);
-
-   if (mysqli_stmt_execute($stmt)) {
-     echo "Inserted....";
-   } else {
-     echo "Error: " . mysqli_error($con);
-   }
-   mysqli_stmt_close($stmt);
-}
 ?>

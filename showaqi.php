@@ -1,12 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+        <style>
+        .top-right-buttons {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .top-right-buttons button {
+            background: #2a5298;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .top-right-buttons button:hover {
+            background: #1e3c72;
+        }
+    </style>
+</head>
+
+<div class="top-right-buttons">
+    <button type="button" onclick="window.location.href='user.php'">User</button>
+    <button type="button" onclick="window.location.href='index.html'">Logout</button>
+</div>
+<body>
+    
+</body>
+</html>
 <?php
-echo '<div style="position: absolute; top: 16px; right: 16px;">
-    <button onclick="window.location.href=\'user.php\'" style="margin-right:8px;">User</button>
-    <button onclick="window.location.href=\'logout.php\'">Logout</button>
-      </div>';
 $conn = new mysqli("localhost", "root", "", "webtech_labd");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$bgcolor = isset($_COOKIE['bgcolor']) ? htmlspecialchars($_COOKIE['bgcolor']) : '#ffffff';
+echo "<body style='background-color: $bgcolor;'>";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!empty($_POST["cities"]) && is_array($_POST["cities"])) {

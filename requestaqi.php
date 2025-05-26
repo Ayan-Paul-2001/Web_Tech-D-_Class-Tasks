@@ -44,7 +44,7 @@ if ($conn->connect_error) {
 </head>
 <div class="top-right-buttons">
     <button type="button" onclick="window.location.href='user.php'">User</button>
-    <button type="button" onclick="window.location.href='logout.php'">Logout</button>
+    <button type="button" onclick="window.location.href='index.html'">Logout</button>
 </div>
 <body style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; margin: 0;">
     <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
