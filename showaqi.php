@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-
-        <style>
+    <style>
         .top-right-buttons {
             position: absolute;
             top: 20px;
@@ -39,12 +37,12 @@
 </body>
 </html>
 <?php
+$bgcolor = isset($_COOKIE['bgcolor']) ? htmlspecialchars($_COOKIE['bgcolor']) : '#ffffff';
+echo "<body style='background-color: $bgcolor;'>";
 $conn = new mysqli("localhost", "root", "", "webtech_labd");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$bgcolor = isset($_COOKIE['bgcolor']) ? htmlspecialchars($_COOKIE['bgcolor']) : '#ffffff';
-echo "<body style='background-color: $bgcolor;'>";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!empty($_POST["cities"]) && is_array($_POST["cities"])) {

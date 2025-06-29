@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,40 +31,42 @@
     <div class="flex-container">
         <div class="column-container" style="margin-top: -50px;"> 
             <div style="background-color: rgb(160, 104, 70);height: 470px;width: 300px;">
-            <form action="external.php" method="POST" style="margin-top: -15px;"><h3 style="text-align: center;"><u>User Registration</u></h3><br>
-                <label for="fname" style="margin-left: 10px; " >Full Name:</label><br>
-                <input type="text" id="fname" name="fname" value="ayan" style="margin-left: 10px; border-radius:5px;"><br>
-                <label for="username" style="margin-left: 10px;">Username:</label><br>
-                <input type="text" id="username" name="username" style="margin-left: 10px; border-radius:5px;"><br>
-                <label for="email" style="margin-left: 10px;">Email Address:</label><br>
-                <input type="text" id="email" name="email" value="abcd@gmail.com" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
-                <label for="password" style="margin-left: 10px;">Password:</label><br>
-                <input type="password" id="password" name="password" value="22558800" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
-                <label for="cpassword" style="margin-left: 10px;">Confirm Password:</label><br>
-                <input type="password" id="cpassword" name="cpassword" value="22558800" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
-                <label for="dob" style="margin-left: 10px; shape-margin:1px; border-radius:5px;">Date of Birth</label><br>
-                <input type="date" id="dob" name="dob" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
-                <label for="ucity" style="margin-left: 10px;">User City</label>
-                <select name="ucity" id="ucity">
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="India">India</option>
-                <option value="Pakistan">Pakistan</option>
-                <option value="China">China</option>
-                <option value="Nepal">Nepal</option>
-                </select><br>
-                <label for="color" style="margin-left: 10px; ">Choose Color:</label>
-                <input type="color" id="color" name="color" style="margin-left: 10px; shape-margin:1px; border-radius:5px;"><br>
-                <label type="gender" style="margin-left: 10px;">Gender:</label><br>
-                <input type="radio" id="male" name="gender" value="Male" style="margin-left: 10px;">
-                <label for="male" >Male</label><br>
-                <input type="radio" id="female" name="gender" value="Female" style="margin-left: 10px;">
-                <label for="female" >Female</label><br>
-                <input type="checkbox" id="terms" name="terms&cond" value="Terms & Condtions" style="margin-left: 10px;">
-                <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br> <br>
-                <input type="submit" name="submit" value="Submit" style="margin-left: 10px; ">
-            </form>
+                <form action="signup_handler.php" method="POST" style="margin-top: -15px;">
+                    <h3 style="text-align: center;"><u>User Registration</u></h3><br>
+                    <label for="fname" style="margin-left: 10px;">Full Name:</label><br>
+                    <input type="text" id="fname" name="fname" value="ayan" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="username" style="margin-left: 10px;">Username:</label><br>
+                    <input type="text" id="username" name="username" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="email" style="margin-left: 10px;">Email Address:</label><br>
+                    <input type="text" id="email" name="email" value="abcd@gmail.com" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="password" style="margin-left: 10px;">Password:</label><br>
+                    <input type="password" id="password" name="password" value="22558800" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="cpassword" style="margin-left: 10px;">Confirm Password:</label><br>
+                    <input type="password" id="cpassword" name="cpassword" value="22558800" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="dob" style="margin-left: 10px;">Date of Birth:</label><br>
+                    <input type="date" id="dob" name="dob" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label for="ucity" style="margin-left: 10px;">User City:</label>
+                    <select name="ucity" id="ucity" style="margin-left: 10px;">
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="China">China</option>
+                        <option value="Nepal">Nepal</option>
+                    </select><br>
+                    <label for="color" style="margin-left: 10px;">Choose Color:</label>
+                    <input type="color" id="color" name="color" style="margin-left: 10px; border-radius:5px;"><br>
+                    <label style="margin-left: 10px;">Gender:</label><br>
+                    <input type="radio" id="male" name="gender" value="Male" style="margin-left: 10px;">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="Female" style="margin-left: 10px;">
+                    <label for="female">Female</label><br>
+                    <input type="checkbox" id="terms" name="terms" value="Agreed" style="margin-left: 10px;">
+                    <label for="terms">Agreed to the <a href="https://www.w3schools.com/">terms and conditions</a></label><br><br>
+                    <input type="submit" name="submit" value="Submit" style="margin-left: 10px;">
+                </form>
             </div>
             <script>
+                
             document.querySelector('form').addEventListener('submit', function(event) {
                 //event.preventDefault(); // Prevent form submission
 
@@ -158,22 +159,19 @@
                 alert('Congratuation, You are Good to GO..!!');
             });
             </script>
-            <div style="background-color:rgb(26, 121, 184);height: 200px;width: 300px; overflow: hidden;">
-                <div style="text-align: center; color: white; padding-top: 0;">
-                    <h3 style="margin-top: 5px;">Sign In</h3>
-                    <form id="signin-form" style="margin-top: 7px;" method="POST" action="requestaqi.php"></form>
-                        <label for="signin-email" style="color: rgb(10, 10, 10); font-size: 18px;">Email:</label><br>
-                        <input type="text" id="signin-email" name="signin-email" style="border-radius: 5px; width: 90%;"><br><br>
-                        <label for="signin-password" style="color: rgb(0, 0, 0); font-size: 18px;">Password:</label><br>
-                        <input type="password" id="signin-password" name="signin-password" style="border-radius: 5px; width: 90%;"><br><br>
-                        <input type="submit" value="Login" name="login"style="border-radius: 5px; background-color: white; color: black; padding: 5px 20px; font-size: 14px; display: inline-block;">
-                    </form>
-
-                    
-                </div>
-            </div> 
-
-
+           <div style="background-color:rgb(26, 121, 184);height: 200px;width: 300px; overflow: hidden;">
+            <div style="text-align: center; color: white; padding-top: 0;">
+                <h3 style="margin-top: 5px;">Sign In</h3>
+                <form action="signin_handler.php" method="post" style="margin-top: 7px;">
+                    <label for="signin-username" style="color: rgb(10, 10, 10); font-size: 18px;">Username:</label><br>
+                    <input type="text" id="signin-username" name="signin-username" style="border-radius: 5px; width: 90%;" required><br><br>
+                    <label for="signin-password" style="color: rgb(0, 0, 0); font-size: 18px;">Password:</label><br>
+                    <input type="password" id="signin-password" name="signin-password" style="border-radius: 5px; width: 90%;" required><br><br>
+                    <input type="submit" value="Login" style="border-radius: 5px; background-color: white; color: black; padding: 5px 20px; font-size: 14px; display: inline-block;">
+                </form>
+            </div>
+        </div>
+           
         </div>
         <div style="background-color: rgb(33, 200, 212); height: 650px; width: 400px; margin-top: -50px; padding: 20px;">
             <table style="border-collapse: collapse; width: 100%; text-align: center; margin-top: 30px;"> <caption style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">Air Quality Index (AQI)</caption>
